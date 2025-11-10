@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hábitos de Vida Saludable para Docentes Mujeres - KIMBO</title>
+    <link rel="stylesheet" href="habitos-mujeres.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+<div class="theme-selector-container">
+        <button class="theme-btn">🎨 Temas</button>
+        <div class="theme-menu">
+            <button class="theme-option" data-theme="default">☀️ Modo Día (Claro)</button>
+            <button class="theme-option" data-theme="dark">🌙 Modo Noche (Oscuro)</button>
+            <button class="theme-option" data-theme="ocean">🌊 Modo Océano (Relajante)</button>
+        </div>
+    </div>
+
+    <header>
+        <h1 class="titulo">KYMBO</h1>
+        <h2 class="subtitulo">Colegio Brasilia Bosa</h2>
+
+        <div class="menu-container">
+            <button class="menu-btn">☰</button>
+            <ul class="menu">
+                <li><a href="../index.html">🏠 Inicio</a></li>
+                <li><a href="porque-mujeres.html">🏫 Qué es sedentarismo</a></li>
+                <li><a href="habitos-mujeres.html">🏃‍♀️ Hábitos de vida</a></li>
+                <li><a href="alimentacion-mujeres.html">🥗 Alimentación</a></li>
+                <li><a href="ejercicio-mujeres.html">💪 Ejercicio</a></li>
+                <li><a href="podcast.html">🎙️ Podcast</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <main>
+        <section class="contenido">
+            
+            <h2>🧘‍♀️ Hábitos de Vida para Docentes Mujeres</h2>
+            <p>
+                La profesión docente exige altos niveles de energía y concentración. Adoptar hábitos saludables es fundamental para gestionar el estrés, prevenir el agotamiento y mantener un bienestar integral.
+            </p>
+
+            <section class="habito-seccion">
+                <h3>💧 Hidratación y Nutrición Consciente</h3>
+                <ul>
+                    <li>✅ **Beber Agua Regularmente:** La deshidratación afecta la concentración. Mantén una botella de agua visible en tu escritorio.</li>
+                    <li>✅ **Evitar el "Picoteo" de Azúcares:** En lugar de dulces o pasteles rápidos, opta por frutos secos, frutas o yogur para mantener niveles de energía estables.</li>
+                    <li>✅ **Desayuno Completo:** Es la base para un día productivo. Incluye proteínas y fibra para evitar la fatiga a media mañana.</li>
+                </ul>
+            </section>
+            
+            <section class="habito-seccion">
+                <h3>😴 Sueño de Calidad y Descanso</h3>
+                <ul>
+                    <li>✅ **Establecer una Rutina:** Intenta acostarte y levantarte a la misma hora, incluso los fines de semana.</li>
+                    <li>✅ **Higiene del Sueño:** Evita el café o la exposición a pantallas (celular/tablet) al menos una hora antes de dormir.</li>
+                    <li>✅ **Micro-descansos Diarios:** Durante el recreo o entre clases, haz una pausa mental de 5 minutos, lejos de la sala de profesores, si es posible.</li>
+                </ul>
+            </section>
+            
+            <section class="habito-seccion">
+                <h3>🧠 Gestión del Estrés y Mente Activa</h3>
+                <ul>
+                    <li>✅ **Establecer Límites:** Aprende a decir "no" a responsabilidades que sobrepasen tu tiempo o energía.</li>
+                    <li>✅ **Momentos de Quietud:** Dedica 10 minutos diarios a la respiración profunda o la meditación, preferiblemente al inicio o final del día.</li>
+                    <li>✅ **Hacer Algo por Placer:** Dedica tiempo a un hobby o actividad que te desconecte totalmente del trabajo (lectura, música, jardinería).</li>
+                </ul>
+            </section>
+            
+            <section class="habito-seccion">
+                <h3>🚶‍♀️ Actividad Física Integrada</h3>
+                <ul>
+                    <li>✅ **Romper el Sedentarismo:** Levántate y camina por el salón o el pasillo cada vez que los estudiantes realicen un trabajo individual.</li>
+                    <li>✅ **Estiramientos Rápidos:** Haz estiramientos de cuello, hombros y muñecas varias veces al día para aliviar la tensión postural.</li>
+                    <li>✅ **Buscar Apoyo:** Únete a un grupo de ejercicio o caminata con otras colegas para motivarse mutuamente.</li>
+                </ul>
+            </section>
+            
+            <section class="video-destacado">
+                <p style="text-align: center; font-weight: 600; color: #ff6666; margin-bottom: 5px;">🎥 Video Recomendado: Hábitos Saludables en el Trabajo</p>
+                                <a class="boton-youtube" href="https://youtu.be/pDwzKsjnABk?si=BKzg8QdM3koUpsUi" target="_blank">
+                    🎥 Ver en YouTube
+                </a>
+                </div>
+            </section>
+
+        </section>
+    </main>
+
+
+    <script>
+        // Lógica para mostrar/ocultar menú 
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuBtn = document.querySelector(".menu-btn");
+            const menu = document.querySelector(".menu");
+            if (menuBtn && menu) {
+                menuBtn.addEventListener("click", () => {
+                    menu.classList.toggle("show");
+                });
+            }
+        });
+
+        // Mostrar video al hacer clic en miniatura
+        function mostrarVideo() {
+            const iframe = document.getElementById("videoYoutube");
+            // Cambiar el ID del video si es necesario. Este es un ejemplo:
+            iframe.src = "https://www.youtube.com/embed/1_q3F0zYh5g?autoplay=1&rel=0"; 
+            iframe.style.display = "block";
+            document.querySelector(".thumbnail").style.display = "none";
+            document.querySelector(".boton-youtube").style.display = "none";
+        }
+    </script>
+<script src="../tema.js"></script>
+</body>
+</html>

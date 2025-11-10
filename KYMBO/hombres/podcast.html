@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast y Motivación - KIMBO</title>
+    <link rel="stylesheet" href="../style/style-prueba.css"> 
+    <link rel="stylesheet" href="podcast.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="theme-selector-container">
+    <button class="theme-btn">🎨 Temas</button>
+    <div class="theme-menu">
+        <button class="theme-option" data-theme="default">☀️ Modo Día (Claro)</button>
+        <button class="theme-option" data-theme="dark">🌙 Modo Noche (Oscuro)</button>
+        <button class="theme-option" data-theme="ocean">🌊 Modo Océano (Relajante)</button>
+    </div>
+</div>
+
+<header>
+    <div class="titulos">
+        <h1 class="titulo">KYMBO</h1>
+        <h2 class="subtitulo">Colegio Brasilia Bosa</h2>
+    </div>
+
+    <div class="menu-container">
+        <button class="menu-btn">☰</button>
+        <ul class="menu"> 
+            <li><a href="../index.html">🏠 Inicio</a></li>
+            <li><a href="porque-hombres.html">🏫 Qué es sedentarismo</a></li>
+            <li><a href="habitos-hombres.html">🏃‍♀️ Hábitos de vida</a></li>
+            <li><a href="alimentacion-hombres.html">🥗 Alimentación</a></li>
+            <li><a href="ejercicio-hombres.html">💪 Ejercicio</a></li>
+            <li class="current-page"><a href="podcast.html">🎙️ Podcast</a></li> 
+        </ul>
+    </div>
+</header>
+
+<main>
+    <section class="contenido subpagina-podcast-wrapper">
+        
+        <div class="subpagina-contenido">
+            <h1>🎙️ Inspírate: La Voz del Movimiento</h1>
+            
+            <p>A veces, el empujón que necesitamos para cambiar nuestros hábitos viene de escuchar una perspectiva diferente. Estos recursos audiovisuales te ayudarán a entender la **psicología del sedentarismo** y a encontrar la motivación para dar el primer paso.</p>
+
+            <h2>Video Podcast Recomendado: ¿Qué es el sedentarismo y cuáles son sus peligros?</h2>
+            
+            <p>Este video explica en detalle qué significa el sedentarismo, sus causas y los múltiples riesgos para la salud que conlleva la falta de actividad física en la vida moderna.</p>
+
+            <div class="podcast-contenedor">
+                <iframe 
+                    width="100%" 
+                    height="450" 
+                    src="https://www.youtube.com/embed/URn4bAmhoUU"
+                    title="El Sedentarismo, un nuevo vicio laboral con el Dr. Oswaldo Ramos | Episodio #34" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+                <p>🎙️ **Título del Podcast:** El Sedentarismo, un nuevo vicio laboral con el Dr. Oswaldo Ramos | Episodio #34 (41 min 9 s).</p>
+            </div>
+
+            <h2>Más Recursos para Escuchar y Aprender</h2>
+
+            <p>Para aquellos momentos mientras conduces, caminas o descansas, aquí tienes un par de temas clave que puedes buscar en tus plataformas de podcast favoritas (Spotify, Apple Podcasts, etc.):</p>
+            
+            <ul class="lista-temas">
+                <li><strong>La Biología de la Procrastinación:</strong> Entiende por qué nos cuesta empezar a movernos y cómo engañar a nuestro cerebro para que coopere.</li>
+                <li><strong>Mindfulness y Movimiento:</strong> Cómo la atención plena puede mejorar tu experiencia de ejercicio y reducir el estrés laboral.</li>
+                <li><strong>El Impacto del Sueño en la Energía:</strong> Descubre por qué dormir mejor es la base para querer estar activo durante el día.</li>
+            </ul>
+
+        </div>
+    </section>
+</main>
+
+
+<script>
+    // Lógica para el menú desplegable (☰)
+    const menuBtn = document.querySelector(".menu-btn");
+    const menu = document.querySelector(".menu");
+
+    if (menuBtn && menu) {
+        menuBtn.addEventListener("click", () => {
+            menu.classList.toggle("show");
+        });
+    }
+
+    // LÓGICA DE TEMAS (🎨)
+    document.addEventListener("DOMContentLoaded", () => {
+        const themeBtn = document.querySelector(".theme-btn");
+        const themeMenu = document.querySelector(".theme-menu");
+        const themeOptions = document.querySelectorAll(".theme-option");
+        const body = document.body;
+        
+        if (themeBtn && themeMenu) {
+            themeBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                themeMenu.classList.toggle("show-theme");
+            });
+        }
+
+        function applyTheme(theme) {
+            body.className = ''; 
+            body.classList.add(theme);
+            localStorage.setItem('userTheme', theme); 
+        }
+
+        const savedTheme = localStorage.getItem('userTheme') || 'default';
+        applyTheme(savedTheme);
+
+        themeOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                const newTheme = option.getAttribute('data-theme');
+                applyTheme(newTheme);
+                themeMenu.classList.remove("show-theme"); 
+            });
+        });
+        
+        // Cierra el menú de temas si se hace clic fuera
+        document.addEventListener('click', (e) => {
+            if (themeMenu && !themeMenu.contains(e.target) && !themeBtn.contains(e.target)) {
+                 themeMenu.classList.remove("show-theme");
+            }
+        });
+    });
+
+</script>
+</body>
+</html>

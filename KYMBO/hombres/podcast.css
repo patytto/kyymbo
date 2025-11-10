@@ -1,0 +1,901 @@
+/* ====================================================== */
+/* ===== BASE CSS - TOMADO DE TU REFERENCIA ORIGINAL ===== */
+/* ====================================================== */
+
+/* ===== FONDO Y ESTRUCTURA GENERAL (CENTRADO) ===== */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    /* Degradado animado (Modo Día - Base) */
+    background: linear-gradient(135deg, #ff9a9e, #a1c4fd, #fbc2eb, #fddb92);
+    background-size: 300% 300%;
+    animation: gradient 12s ease infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ===== HEADER (TÍTULO Y SUBTÍTULO - CENTRADO) ===== */
+header {
+    text-align: center;
+    margin-top: 30px;
+    width: 100%; 
+    transition: color 0.5s ease;
+}
+
+.titulo {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #000;
+    text-shadow: 0 0 5px yellow, 0 0 10px yellow, 0 0 20px yellow;
+    transition: all 0.5s ease;
+}
+
+.subtitulo {
+    display: inline-block;
+    background: #cce5ff;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 6px 15px;
+    border-radius: 10px;
+    margin-top: 8px;
+    transition: all 0.5s ease;
+}
+
+/* ===== MENÚ (BOTÓN Y DESPLIEGUE - ESTILOS CRÍTICOS PARA EL DESPLIEGUE HACIA ABAJO) ===== */
+.menu-container {
+    position: relative;
+    margin-top: 15px;
+    /* Centrar el contenedor del menú */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.menu-btn {
+    background: #000;
+    color: #fff;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.menu-btn:hover {
+    background: #333;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    /* CLAVE: Posicionamiento para que se despliegue debajo del botón */
+    position: absolute; 
+    left: 50%; 
+    transform: translateX(-50%);
+    top: 100%; /* Asegura que comienza debajo del botón */
+    
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    display: none;
+    width: 220px;
+    text-align: left; 
+    transition: all 0.5s ease;
+    z-index: 900; /* Para que quede encima del contenido principal */
+}
+
+.menu.show {
+    display: block;
+}
+
+.menu li {
+    border-bottom: 1px solid #ddd;
+}
+
+.menu li:last-child {
+    border-bottom: none;
+}
+
+.menu a {
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.menu a:hover {
+    background: #f1f1f1;
+}
+
+
+/* ===== CONTENIDO (CAJA BLANCA - BASE) ===== */
+.contenido {
+    background: #fff;
+    margin: 30px auto;
+    padding: 25px 40px; 
+    border-radius: 15px;
+    max-width: 800px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    text-align: left; 
+    transition: all 0.5s ease;
+}
+
+.contenido h2 {
+    font-size: 2.2rem; 
+    color: #000;
+    border-bottom: 2px solid #ff6666;
+    padding-bottom: 5px;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+
+.contenido h3 {
+    color: #0077b6;
+    margin-top: 25px;
+    font-size: 1.5rem;
+    transition: all 0.5s ease;
+}
+
+.contenido p, .contenido ul {
+    color: #333;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    transition: color 0.5s ease;
+}
+
+.contenido ul {
+    list-style: none; 
+    padding-left: 0;
+    margin-bottom: 25px;
+}
+
+.contenido ul li {
+    display: flex; 
+    align-items: flex-start;
+    margin-bottom: 12px;
+    gap: 8px;
+    transition: color 0.5s ease;
+}
+
+/* ===== FOOTER ===== */
+.footer-fixed {
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+}
+
+/* ====================================================== */
+/* ===== SELECTOR DE TEMAS (DERECHA) - ESTILOS BASE ===== */
+/* ====================================================== */
+.theme-selector-container {
+    position: fixed;
+    top: 30px; 
+    right: 30px;
+    z-index: 1000;
+}
+
+.theme-btn {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    background: linear-gradient(135deg, #ff5722, #ff9800);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.theme-btn:hover {
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+    transform: scale(1.05);
+}
+
+.theme-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    margin-top: 10px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.theme-menu.show-theme {
+    display: flex;
+}
+
+.theme-option {
+    padding: 10px 20px;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.theme-option:hover {
+    background: #f1f1f1;
+}
+
+/* ====================================================== */
+/* ===== ESTILOS ESPECÍFICOS DEL CONTENIDO DE PODCAST ===== */
+/* ====================================================== */
+
+.subpagina-podcast-wrapper {
+    /* Sobreescribe el max-width de .contenido para el layout de video */
+    max-width: 900px;
+    padding: 20px 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.subpagina-contenido {
+    text-align: left;
+    padding: 30px 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); 
+    margin: 30px auto;
+    transition: all 0.5s ease;
+}
+
+.subpagina-contenido h1 {
+    color: #000000;
+    text-shadow: none;
+    font-size: 2.5rem; 
+    margin-bottom: 5px;
+    border-bottom: 3px solid #ff9a9e;
+    padding-bottom: 15px;
+    font-weight: 800;
+}
+
+.subpagina-contenido h2 {
+    font-size: 1.8rem;
+    color: #0077b6; 
+    margin-top: 35px;
+    margin-bottom: 15px;
+    border-left: 5px solid #a1c4fd;
+    padding-left: 15px;
+    font-weight: 700;
+}
+
+/* Contenedor del Iframe del podcast/video */
+.podcast-contenedor {
+    position: relative;
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background: #000;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.podcast-contenedor iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.podcast-contenedor p {
+    text-align: center;
+    font-style: italic;
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px; 
+}
+
+/* Estilos para la lista de temas a buscar */
+.lista-temas {
+    list-style: none;
+    padding-left: 0;
+}
+
+.lista-temas li {
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    background: #f0f0f0;
+    border-radius: 8px;
+    font-size: 1.0rem;
+    border-left: 4px solid #ff5722;
+    transition: all 0.2s ease;
+}
+
+.lista-temas strong {
+    color: #ff5722;
+}
+
+/* ====================================================== */
+/* ===== ESTILOS DE TEMAS (Modo Día, Noche, Océano) ===== */
+/* ====================================================== */
+
+/* --- MODO NOCHE (DARK) --- */
+body.dark {
+    background: linear-gradient(135deg, #1e1e1e, #3a3a3a);
+    background-size: 300% 300%;
+    animation: gradient 12s ease infinite;
+    color: #f1f1f1;
+}
+
+body.dark .titulo {
+    color: #fff;
+    text-shadow: 0 0 5px #000, 0 0 10px #000, 0 0 20px #a1c4fd;
+}
+
+body.dark .subtitulo {
+    background: #444;
+    color: #f1f1f1;
+}
+
+body.dark .menu {
+    background: #333;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.15);
+}
+
+body.dark .menu a {
+    color: #f1f1f1;
+    border-bottom: 1px solid #444;
+}
+
+body.dark .menu a:hover {
+    background: #555;
+}
+
+body.dark .contenido {
+    background: rgba(40, 40, 40, 0.95);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    color: #f1f1f1; 
+}
+
+body.dark .contenido h2 {
+    color: #fff;
+    border-bottom: 2px solid #a1c4fd;
+}
+
+body.dark .contenido h3 {
+    color: #a1c4fd;
+}
+
+body.dark .contenido p, 
+body.dark .contenido ul,
+body.dark .contenido ul li {
+    color: #f1f1f1; 
+}
+
+body.dark .footer-fixed {
+    background: rgba(30, 30, 30, 0.8);
+    color: #a1c4fd;
+}
+
+body.dark .subpagina-contenido {
+    background: rgba(40, 40, 40, 0.95);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.1); 
+}
+
+body.dark .subpagina-contenido h1 {
+    color: #f1f1f1;
+    border-bottom: 3px solid #fbc2eb;
+}
+
+body.dark .subpagina-contenido h2 {
+    color: #a1c4fd; 
+    border-left: 5px solid #fbc2eb;
+}
+
+body.dark .subpagina-contenido p, body.dark .subpagina-contenido ul {
+    color: #ccc;
+}
+
+body.dark .lista-temas li {
+    background: #444;
+    border-left: 4px solid #fbc2eb;
+    color: #f1f1f1;
+}
+
+body.dark .lista-temas strong {
+    color: #fbc2eb;
+}
+
+body.dark .podcast-contenedor p {
+    color: #aaa;
+}
+
+
+/* --- MODO OCÉANO (OCEAN) --- */
+body.ocean {
+    background: linear-gradient(135deg, #0448c7, #183de4); 
+    background-size: 300% 300%;
+    animation: gradient 12s ease infinite;
+    color: #333;
+}
+
+body.ocean .titulo {
+    color: #000000;
+    text-shadow: none;
+}
+
+body.ocean .subtitulo {
+    background: #b2ebf2;
+    color: #004d61;
+}
+
+body.ocean .menu {
+    background: #e0f7fa;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+body.ocean .menu a {
+    color: #333;
+    border-bottom: 1px solid #cff4ff;
+}
+
+body.ocean .menu a:hover {
+    background: #cff4ff;
+}
+
+body.ocean .contenido {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    color: #333;
+}
+
+body.ocean .contenido h2 {
+    color: #0077b6;
+    border-bottom: 2px solid #2193b0;
+}
+
+body.ocean .contenido h3 {
+    color: #004d61;
+}
+
+body.ocean .contenido p, 
+body.ocean .contenido ul,
+body.ocean .contenido ul li {
+    color: #333; 
+}
+
+body.ocean .footer-fixed {
+    background: rgba(255, 255, 255, 0.9);
+    color: #004d61;
+}
+
+body.ocean .subpagina-contenido {
+    background: rgba(224, 247, 250, 0.9);
+    box-shadow: 0 8px 30px rgba(0, 77, 97, 0.4); 
+}
+
+body.ocean .subpagina-contenido h1 {
+    color: #004d61;
+    border-bottom: 3px solid #0077b6;
+}
+
+body.ocean .subpagina-contenido h2 {
+    color: #004d61;
+    border-left: 5px solid #0077b6;
+}
+
+body.ocean .subpagina-contenido p, body.ocean .subpagina-contenido ul {
+    color: #333;
+}
+
+body.ocean .lista-temas li {
+    background: #cff4ff;
+    border-left: 4px solid #004d61;
+    color: #333;
+}
+
+body.ocean .lista-temas strong {
+    color: #004d61;
+}
+
+body.ocean .podcast-contenedor p {
+    color: #333;
+}
+
+
+/* ====================================================== */
+/* ===== MENÚ DESPLEGABLE (ESTILO TARJETA MODERNA) ===== */
+/* ====================================================== */
+
+/* Botón del menú (☰) - Estilo aplicado a #botonMenu */ 
+#botonMenu { 
+    font-size: 1.2rem;
+    cursor: pointer; 
+    background: #28a745; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+    transition: background-color 0.2s; 
+    margin-bottom: 10px; 
+} 
+
+#botonMenu:hover { 
+    background-color: #218838; 
+} 
+
+/* Estilos del menú desplegable (CLASE .menu - ¡CORREGIDO PARA CENTRARSE!) */
+.menu { 
+    list-style: none;
+    padding: 0; 
+    margin-top: 15px; 
+    width: 90%;
+    max-width: 350px; 
+    
+    /* PROPIEDADES AÑADIDAS PARA CENTRAR EL BLOQUE */
+    margin-left: auto; 
+    margin-right: auto;
+    /* FIN PROPIEDADES PARA CENTRAR */
+
+    background: #ffffff; /* MODO DÍA: Fondo blanco */
+    border-radius: 12px; 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+    overflow: hidden; 
+    text-align: left; 
+    transition: all 0.5s ease; 
+    
+    /* Reglas para el despliegue animado */
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+} 
+
+/* Cabecera del menú */
+.menu h3 {
+    padding: 10px 15px 5px; 
+    font-size: 1.1rem; 
+    font-weight: 700;
+    margin: 0;
+    color: #007BFF;
+}
+
+/* Lista de opciones (el <ul> dentro de .menu) */
+.menu ul { 
+    list-style: none;
+    padding: 0 0 8px; 
+    margin: 0; 
+} 
+
+/* Enlaces del menú (el <a> dentro de .menu) */
+.menu ul li a { 
+    display: flex;
+    align-items: center;
+    padding: 10px 15px; 
+    color: #333; 
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 0.95rem; 
+    transition: background 0.2s, color 0.2s; 
+    border-bottom: 1px solid #eee; 
+} 
+
+.menu ul li:last-child a { 
+    border-bottom: none; 
+} 
+
+/* EFECTO HOVER - MODO DÍA */ 
+.menu ul li a:hover { 
+    background: linear-gradient(to right, #a1c4fd, #c8dafa); 
+    color: white; 
+} 
+
+/* ESTADO VISIBLE (cuando se quita la clase .oculto en JS) */
+.menu:not(.oculto) {
+    max-height: 500px;
+    opacity: 1;
+}
+
+
+/* Selectores de Rol y Oculto */
+.selector-rol { 
+    text-align: center; 
+    margin: 30px 0; 
+} 
+
+.selector-rol p { 
+    font-weight: bold; 
+    margin-bottom: 10px; 
+    font-size: 18px; 
+} 
+
+.selector-rol button { 
+    padding: 10px 25px; 
+    margin: 10px; 
+    font-size: 16px; 
+    background-color: #007BFF; 
+    color: white; 
+    border: none; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+} 
+
+.selector-rol button:hover { 
+    background-color: #0056b3; 
+} 
+
+#botonMenuContainer { 
+    text-align: center; 
+    margin-top: 20px; 
+} 
+
+.oculto { 
+    display: none !important; 
+} 
+
+/* ====================================================== */ 
+/* ===== 1. SELECTOR DE TEMAS (DERECHA) ===== */ 
+/* ====================================================== */ 
+.theme-selector-container { 
+    position: fixed; 
+    top: 30px;  
+    right: 30px; 
+    z-index: 1000; 
+} 
+
+.theme-btn { 
+    padding: 10px 15px; 
+    font-size: 1rem; 
+    border: none; 
+    background: linear-gradient(135deg, #ff5722, #ff9800); 
+    color: white; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    font-weight: 600; 
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+} 
+
+.theme-btn:hover { 
+    background: linear-gradient(135deg, #ff9800, #ff5722); 
+    transform: scale(1.05); 
+} 
+
+.theme-menu { 
+    display: none; 
+    flex-direction: column; 
+    position: absolute; 
+    right: 0; 
+    margin-top: 10px; 
+    background: #fff; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+    overflow: hidden; 
+} 
+
+.theme-menu.show-theme { 
+    display: flex; 
+} 
+
+.theme-option { 
+    padding: 10px 20px; 
+    border: none; 
+    background: none; 
+    text-align: left; 
+    cursor: pointer; 
+    font-size: 15px; 
+    transition: background-color 0.2s, color 0.2s; 
+} 
+
+.theme-option:hover { 
+    background: #f1f1f1; 
+} 
+
+/* ====================================================== */ 
+/* ===== 2. MENSAJE FOOTER ESPECIAL (FINAL) ===== */ 
+/* ====================================================== */ 
+.mensaje-footer-especial { 
+    margin: 20px auto; 
+    padding: 15px 30px; 
+    max-width: 500px; 
+    font-size: 1.1rem; 
+    font-weight: 600; 
+    border-radius: 10px; 
+    text-align: center; 
+    
+    /* ESTILO DÍA (Default) */ 
+    background: rgba(255, 255, 255, 0.9); 
+    color: #333333; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+    backdrop-filter: blur(5px);  
+    transition: all 0.5s ease; 
+    border: 1px solid #ddd; 
+} 
+
+
+/* --- Adaptación para MODO NOCHE (DARK) - CORREGIDO Y FORZADO --- */ 
+body.dark .mensaje-footer-especial { 
+    background: #222222 !important;  
+    color: #FFFFFF !important;  
+    box-shadow:  
+        0 0 5px black,  
+        0 0 10px black,  
+        0 0 20px yellow,  
+        0 0 30px yellow !important;  
+    border: 3px solid black !important; 
+} 
+
+/* --- Adaptación para MODO OCÉANO (OCEAN) --- */ 
+body.ocean .mensaje-footer-especial { 
+    background: rgba(224, 247, 250, 0.9); 
+    color: #004d61; 
+    box-shadow: 0 4px 10px rgba(0, 77, 97, 0.4); 
+    border: 1px solid #0077b6; 
+} 
+
+/* ====================================================== */ 
+/* ===== 3. ESTILOS DE TEMAS CON EFECTO NEÓN Y MENÚ GRIS ===== */ 
+/* ====================================================== */ 
+
+/* --- MODO NOCHE (DARK) --- */ 
+body.dark { 
+    background: linear-gradient(135deg, #1e1e1e, #3a3a3a); 
+    color: #f1f1f1; 
+} 
+
+body.dark .contenido { 
+    background: rgba(40, 40, 40, 0.95); 
+    max-width: 700px;  
+    padding: 60px 50px;  
+    border-radius: 40px;  
+    box-shadow:  
+        0 0 10px rgba(0,0,0,0.8),  
+        0 0 20px black,  
+        0 0 30px black,  
+        0 0 40px yellow,
+        0 0 70px yellow;  
+    border: 3px solid black;  
+    color: #f1f1f1; 
+} 
+
+body.dark .titulos h1 { 
+    color: #fff; 
+} 
+
+body.dark .titulos h2 { 
+    background: #555; 
+    color: #f1f1f1; 
+} 
+
+/* --- Botón del menú en Modo Noche --- */
+body.dark #botonMenu {
+    background-color: #1e1e1e;
+    color: yellow;
+    box-shadow: 0 0 5px yellow, 0 0 10px yellow;
+}
+body.dark #botonMenu:hover {
+    background-color: #3a3a3a;
+}
+
+/* --- MENÚ DESPLEGABLE EN MODO NOCHE (GRIS BONITO Y MODERNO) --- */ 
+body.dark .menu {
+    background: #2b2b2b; /* FONDO GRIS OSCURO */ 
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.1); 
+    border-radius: 12px; 
+}
+
+body.dark .menu h3 {
+    color: #a1c4fd;
+}
+
+body.dark .menu ul li a {
+    color: #f1f1f1; 
+    border-bottom: 1px solid #444; 
+}
+
+body.dark .menu ul li a:hover {
+    background: linear-gradient(to right, #1a1a1a, #333333); 
+    color: #a1c4fd; 
+}
+
+body.dark .mensaje-footer-especial { 
+    background: rgba(68, 68, 68, 0.8); 
+    color: #a1c4fd;  
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1); 
+} 
+
+/* --- MODO OCÉANO (OCEAN) --- */ 
+body.ocean { 
+    background: linear-gradient(135deg, #0448c7, #183de4); 
+    color: #333; 
+} 
+
+body.ocean .contenido { 
+    background: rgba(67, 172, 233, 0.9); 
+    max-width: 700px;  
+    padding: 60px 50px;  
+    border-radius: 40px;  
+    box-shadow:  
+        0 0 10px rgba(0, 195, 255, 0.6),  
+        0 0 20px rgb(255, 255, 255),  
+        0 0 30px rgb(90, 90, 90),  
+        0 0 40px rgb(255, 255, 255),
+        0 0 70px rgb(247, 247, 247);
+    border: 3px solid black;  
+    color: #333; 
+} 
+
+body.ocean .titulos h1 { 
+    color: #000000; 
+} 
+
+body.ocean .titulos h2 { 
+    background: #b2ebf2; 
+    color: #000000; 
+} 
+
+/* --- Botón del menú en Modo Océano --- */
+body.ocean #botonMenu {
+    background-color: #000000;
+    color: white;
+}
+body.ocean #botonMenu:hover {
+    background-color: #000000;
+}
+
+/* --- MENÚ DESPLEGABLE EN MODO OCÉANO --- */
+body.ocean .menu {
+    background: #e0f7fa;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1); 
+    border-radius: 12px;
+}
+body.ocean .menu h3 {
+    color: #000000;
+}
+body.ocean .menu ul li a {
+    color: #333;
+    border-bottom: 1px solid #cff4ff; 
+}
+body.ocean .menu ul li a:hover {
+    background: linear-gradient(to right, #b2ebf2, #e0f7fa); 
+    color: #000000; 
+}
+
+body.ocean .mensaje-footer-especial { 
+    background: rgba(255, 255, 255, 0.8); 
+    color: #000000;  
+    box-shadow: 0 2px 8px rgba(255, 230, 0, 0.2); 
+} 
+
+/* ===== Responsive (Ajuste para móviles) ===== */ 
+@media (max-width: 600px) { 
+    .contenido { 
+        padding: 30px 20px; 
+        border-radius: 25px; 
+    } 
+    .theme-selector-container { 
+        top: 15px; 
+        right: 15px; 
+    } 
+    .mensaje-footer-especial { 
+        max-width: 90%; 
+        padding: 10px 15px; 
+        font-size: 1rem; 
+    } 
+}

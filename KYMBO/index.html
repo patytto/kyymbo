@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>KYMBO - Menú Sedentarismo</title>
+    <link rel="stylesheet" href="style/style-prueba.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<div class="theme-selector-container">
+    <button class="theme-btn">🎨 Temas</button>
+    <div class="theme-menu">
+        <button class="theme-option" data-theme="default">☀️ Modo Día (Claro)</button>
+        <button class="theme-option" data-theme="dark">🌙 Modo Noche (Oscuro)</button>
+        <button class="theme-option" data-theme="ocean">🌊 Modo Océano (Relajante)</button>
+    </div>
+</div>
+
+<main>
+    <div class="contenido">
+        <div class="titulos">
+            <img src="imagenes/logo.png" alt="Logo Movimiento Docente" class="logo" />
+            <h1>KIMBO</h1>
+            <h2>Colegio Brasilia Bosa</h2>
+        </div>
+
+        <div id="selectorRol" class="selector-rol">
+            <p>Selecciona tu rol:</p>
+            <button onclick="seleccionarRol('profesor')">👨 Profesor</button>
+            <button onclick="seleccionarRol('profesora')">👩 Profesora</button>
+        </div>
+
+        <div id="botonMenuContainer" class="oculto">
+            <button id="botonMenu">☰ Menú</button>
+        </div>
+
+        <nav id="menuProfesor" class="menu oculto">
+            <h3>Menú para Profesor</h3>
+            <ul>
+                <li><a href="hombres/porque-hombres.html">🛋️ Qué es el sedentarismo en hombres</a></li>
+                <li><a href="hombres/habitos-hombres.html">🏃 Hábitos saludables para hombres</a></li>
+                <li><a href="hombres/alimentacion-hombres.html">🥩 Alimentación equilibrada para hombres</a></li>
+                <li><a href="hombres/ejercicio-hombres.html">🏋️‍♂️ Ejercicios físicos</a></li>
+                <li><a href="hombres/podcast.html">🎧 Podcast para hombres</a></li>
+            </ul>
+        </nav>
+
+        <nav id="menuProfesora" class="menu oculto">
+            <h3>Menú para Profesora</h3>
+            <ul>
+                <li><a href="mujeres/porque-mujeres.html">🛋️ Qué es el sedentarismo en mujeres</a></li>
+                <li><a href="mujeres/habitos-mujeres.html">🌿 Bienestar y hábitos para mujeres</a></li>
+                <li><a href="mujeres/alimentacion-mujeres.html">🥗 Alimentación saludable para mujeres</a></li>
+                <li><a href="mujeres/ejercicio-mujeres.html">🧘 Ejercicio y autocuidado</a></li>
+                <li><a href="mujeres/podcast.html">🎙️ Podcast para docentes</a></li>
+            </ul>
+        </nav>
+
+    </div>
+    <div class="mensaje-footer-especial">
+        Tú nos enseñas, nosotros te cuidamos, juntos cambiamos el mundo.
+    </div>
+</main>
+<script>
+    // Lógica de selección de rol
+    let rolSeleccionado = "";
+
+    function seleccionarRol(rol) {
+        rolSeleccionado = rol;
+
+        document.getElementById("selectorRol").classList.add("oculto");
+        document.getElementById("botonMenuContainer").classList.remove("oculto");
+
+        // Ocultar menús al seleccionar rol
+        document.getElementById("menuProfesor").classList.add("oculto");
+        document.getElementById("menuProfesora").classList.add("oculto");
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        // Lógica para mostrar/ocultar el menú según el rol (Animación de despliegue)
+        document.getElementById("botonMenu").addEventListener("click", () => {
+            const menuProfesor = document.getElementById("menuProfesor");
+            const menuProfesora = document.getElementById("menuProfesora");
+
+            if (rolSeleccionado === "profesor") {
+                menuProfesor.classList.toggle("oculto");
+                menuProfesora.classList.add("oculto");
+            } else if (rolSeleccionado === "profesora") {
+                menuProfesora.classList.toggle("oculto");
+                menuProfesor.classList.add("oculto");
+            }
+        });
+        
+        // =========================================================
+        // LÓGICA DE TEMAS
+        // =========================================================
+        const themeBtn = document.querySelector(".theme-btn");
+        const themeMenu = document.querySelector(".theme-menu");
+        const themeOptions = document.querySelectorAll(".theme-option");
+        const body = document.body;
+        
+        if (themeBtn && themeMenu) {
+            themeBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                themeMenu.classList.toggle("show-theme");
+            });
+        }
+
+        function applyTheme(theme) {
+            body.className = ''; 
+            body.classList.add(theme);
+            localStorage.setItem('userTheme', theme); 
+        }
+
+        // Aplicar el tema guardado al cargar la página
+        const savedTheme = localStorage.getItem('userTheme') || 'default';
+        applyTheme(savedTheme);
+
+        themeOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                const newTheme = option.getAttribute('data-theme');
+                applyTheme(newTheme);
+                themeMenu.classList.remove("show-theme"); 
+            });
+        });
+        
+        // Cierra el menú de temas si se hace clic fuera
+        document.addEventListener('click', (e) => {
+            if (themeMenu && !themeMenu.contains(e.target) && !themeBtn.contains(e.target)) {
+                 themeMenu.classList.remove("show-theme");
+            }
+        });
+    });
+</script>
+<script src="../tema.js"></script>
+</body>
+</html>

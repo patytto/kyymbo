@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutinas de Ejercicio - KIMBO</title>
+    <link rel="stylesheet" href="../style/style-prueba.css"> 
+    <link rel="stylesheet" href="ejercicio.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="contenido">
+        <div class="titulos">
+            <img src="../imagenes/logo.png" alt="Logo Movimiento Docente" class="logo">
+            <h1>KIMBO</h1>
+            <h2>Colegio Brasilia Bosa</h2>
+        </div>
+
+        <header class="menu-principal-wrapper">
+            <button id="menu-button">☰</button>
+            
+            <nav id="dropdown-menu">
+                <a href="sedentarismo.html">🛋️ Qué es sedentarismo</a>
+                <a href="habitos-vida.html">🏃 Hábitos de vida</a>
+                <a href="alimentacion.html">🥗 Alimentación</a>
+                <a href="ejercicio.html">💪 Ejercicio</a>
+                <a href="podcast.html">🎙️ Podcast</a>
+            </nav>
+        </header>
+        
+        <div class="subpagina-contenido">
+            <h1>💪 Ejercicio: Pequeñas Rutinas, Grandes Beneficios</h1>
+            
+            <p>La clave para vencer el sedentarismo no es entrenar como un atleta, sino ser **consistente** con el movimiento. El ejercicio regular mejora el enfoque mental, reduce el estrés laboral y, por supuesto, fortalece el cuerpo. No necesitas horas; solo necesitas **quince minutos de calidad**.</p>
+
+            <h2>Rutina de 15 Minutos para Docentes Ocupados</h2>
+            
+            <p>Diseñada para hacerse antes de empezar la jornada, durante un descanso largo, o al llegar a casa. ¡Cualquier momento cuenta!</p>
+
+            <div class="plan-ejercicio">
+                <h3>Tu Plan de Movimiento Rápido:</h3>
+                <ol>
+                    <li><strong>Calentamiento (3 min):</strong> Marcha en el sitio, círculos de brazos, rotaciones de cuello suaves.</li>
+                    <li><strong>Sentadillas (5 min):</strong> 3 series de 10 repeticiones. Usa una silla si es necesario.</li>
+                    <li><strong>Flexiones en Pared (5 min):</strong> 3 series de 10 repeticiones. Empuja la pared para trabajar el pecho y brazos.</li>
+                    <li><strong>Plancha o Abdominales de Bicicleta (2 min):</strong> Mantén la plancha por 30 segundos o haz 1 minuto de abdominales ligeros.</li>
+                </ol>
+            </div>
+
+            <h2>Recursos Audiovisuales para Mantener la Motivación</h2>
+            
+            <p>Usa estos videos como guía para tus rutinas. Recuerda que la variedad mantiene la motivación alta.</p>
+
+            <div class="video-contenedor">
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/S0Q8x9xJc7M" title="Entrenamiento de 15 minutos sin impacto" allowfullscreen></iframe>
+                    <p>Cardio de 15 Minutos (Sin saltos)</p>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/7V20G_x-V-Y" title="Rutina de estiramiento para todo el cuerpo" allowfullscreen></iframe>
+                    <p>Estiramiento Completo de 10 Minutos</p>
+                </div>
+            </div>
+
+            <p style="margin-top: 30px; text-align: center; font-style: italic;">"No es el tiempo que tienes, sino el uso que le das. 15 minutos de ejercicio son mejor que nada."</p>
+            
+            <div class="descarga-contenedor">
+                <a href="../archivos/plan-ejercicio.xlsx" download="Plan_Ejercicios_Brasilia.xlsx" class="boton-descarga">
+                    ⬇️ Descargar Tabla de Seguimiento de Ejercicios
+                </a>
+            </div>
+            </div>
+
+    </div>
+    
+    <script>
+        const menuButton = document.getElementById("menu-button");
+        const menu = document.getElementById("dropdown-menu");
+
+        menuButton.addEventListener("click", () => {
+            menu.classList.toggle("menu-visible");
+        });
+    </script>
+
+</body>
+</html> 

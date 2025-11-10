@@ -1,0 +1,122 @@
+/* Estilos específicos para la subpágina de Ejercicio */
+
+/* CONTENEDOR PRINCIPAL DEL CONTENIDO */
+.subpagina-contenido {
+    max-width: 900px;
+    text-align: left;
+    padding: 30px 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); 
+    margin-top: 30px; 
+    margin-bottom: 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Título principal (Estilo elegante) */
+.subpagina-contenido h1 {
+    color: #000000;
+    text-shadow: none;
+    font-size: 2.8rem;
+    margin-bottom: 5px;
+    border-bottom: 3px solid #f9a1a1; /* Línea de acento */
+    padding-bottom: 15px;
+    font-weight: 800;
+}
+
+/* Subtítulos (Estilo elegante) */
+.subpagina-contenido h2 {
+    font-size: 1.8rem;
+    color: #0077b6; 
+    margin-top: 35px;
+    margin-bottom: 15px;
+    border-left: 5px solid #a1c4fd; /* Detalle elegante en el lateral */
+    padding-left: 15px;
+    font-weight: 700;
+}
+
+/* Párrafos y Listas Generales */
+.subpagina-contenido p, .subpagina-contenido ul, .subpagina-contenido ol {
+    line-height: 1.7;
+    font-size: 1.05rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el plan de 15 minutos (sección resaltada) */
+.plan-ejercicio {
+    background: #fffbe6; /* Fondo amarillo muy claro para resaltar la sección */
+    border: 1px solid #ffcc00;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+.plan-ejercicio h3 {
+    color: #d89e00; /* Color de encabezado que hace juego */
+    font-size: 1.4rem;
+    margin-top: 0;
+}
+.plan-ejercicio ol {
+    padding-left: 20px;
+}
+.plan-ejercicio li {
+    margin-bottom: 10px;
+    font-size: 1.0rem;
+}
+.plan-ejercicio strong {
+    color: #333;
+}
+
+/* Contenedor de videos responsivo (Grid) */
+.video-contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+.video-item {
+    background: #f8f8f8;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.video-item iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+    display: block;
+}
+.video-item p {
+    padding: 10px;
+    font-size: 0.95rem;
+    text-align: center;
+    font-weight: 600;
+    color: #555;
+}
+
+/* --- ESTILOS PARA EL BOTÓN DE DESCARGA --- */
+.descarga-contenedor {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px dashed #ffcc00; /* Línea de acento que va con el plan de ejercicios */
+}
+
+.boton-descarga {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #ffcc00; /* Color de acento fuerte */
+    color: #333;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.boton-descarga:hover {
+    background: #e6b800;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 204, 0, 0.6);
+}

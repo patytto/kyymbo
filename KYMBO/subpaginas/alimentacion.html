@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alimentación Saludable - KIMBO</title>
+    <link rel="stylesheet" href="../style/style-prueba.css"> 
+    <link rel="stylesheet" href="alimentacion.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="contenido">
+        <div class="titulos">
+            <img src="../imagenes/logo.png" alt="Logo Movimiento Docente" class="logo">
+            <h1>KIMBO</h1>
+            <h2>Colegio Brasilia Bosa</h2>
+        </div>
+
+        <header class="menu-principal-wrapper">
+            <button id="menu-button">☰</button>
+            
+            <nav id="dropdown-menu">
+                <a href="sedentarismo.html">🛋️ Qué es sedentarismo</a>
+                <a href="habitos-vida.html">🏃 Hábitos de vida</a>
+                <a href="alimentacion.html">🥗 Alimentación</a>
+                <a href="ejercicio.html">💪 Ejercicio</a>
+                <a href="podcast.html">🎙️ Podcast</a>
+            </nav>
+        </header>
+        
+        <div class="subpagina-contenido">
+            <h1>🥗 Alimentación: El Combustible de la Energía y la Concentración</h1>
+            
+            <p>La **alimentación** es la principal fuente de energía para combatir la fatiga y el estrés. Para los docentes, una nutrición adecuada se traduce directamente en mejor **concentración** en clase, **estabilidad emocional** y la energía necesaria para mantener las pausas activas. ¡Comer bien es parte de tu plan anti-sedentarismo!</p>
+
+            <h2>Pilares para una Nutrición que Combate la Pereza</h2>
+            
+            <p>En el ajetreo diario, es fácil caer en comidas rápidas o poco nutritivas. Enfócate en estos pilares para mantener tu energía estable:</p>
+
+            <ul class="lista-pilares">
+                <li>
+                    <span>💧</span>
+                    <p><strong>Hidratación, tu Prioridad:</strong> La deshidratación ligera es una causa común de la fatiga. Bebe agua constantemente, no esperes a tener sed. Una botella de agua visible en tu escritorio es un recordatorio visual efectivo.</p>
+                </li>
+                <li>
+                    <span>🥚</span>
+                    <p><strong>El Poder de las Proteínas:</strong> Las proteínas (huevo, pollo, legumbres, nueces) te mantienen **saciado** y evitan el "bajón" de azúcar que ocurre después de comer muchos carbohidratos simples. Inclúyelas en cada comida.</p>
+                </li>
+                <li>
+                    <span>🍎</span>
+                    <p><strong>Golosinas Inteligentes (Meriendas):</strong> Olvídate de los dulces y el pan blanco a media mañana. Sustitúyelos por **frutos secos, yogur natural, o palitos de zanahoria/apio**. Son fáciles de llevar y dan energía sostenida.</p>
+                </li>
+                <li>
+                    <span>🥑</span>
+                    <p><strong>Grasas Buenas:</strong> No todas las grasas son malas. El aguacate, el aceite de oliva y las semillas son esenciales para la **salud cerebral** y te ayudan a concentrarte en el aula.</p>
+                </li>
+            </ul>
+
+            <h2>Planificación Sencilla: Evita Comidas Pesadas</h2>
+            
+            <p>La **planificación** es la clave para comer bien en la escuela. Dedica un momento el fin de semana para organizar tus almuerzos y meriendas. Recuerda que un almuerzo excesivamente pesado provocará somnolencia y sedentarismo post-comida.</p>
+
+            <div class="video-contenedor">
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/5F2_Jv44t-A" title="Ideas de almuerzos saludables para llevar al trabajo" allowfullscreen></iframe>
+                    <p>Almuerzos Fáciles y Saludables para el Trabajo</p>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/l2e28m7z05U" title="Snacks saludables para tener en la oficina" allowfullscreen></iframe>
+                    <p>Meriendas Rápidas y Energéticas</p>
+                </div>
+            </div>
+
+            <p style="margin-top: 30px; text-align: center; font-style: italic;">"Dale a tu cuerpo el mejor combustible, y él te devolverá la energía para moverte."</p>
+            
+            <div class="descarga-contenedor">
+                <a href="../archivos/plan-alimentacion.xlsx" download="Plan_Alimentacion_Brasilia.xlsx" class="boton-descarga">
+                    ⬇️ Descargar Tabla de Planificación Editable
+                </a>
+            </div>
+            </div>
+
+    </div>
+    
+    <script>
+        const menuButton = document.getElementById("menu-button");
+        const menu = document.getElementById("dropdown-menu");
+
+        menuButton.addEventListener("click", () => {
+            menu.classList.toggle("menu-visible");
+        });
+    </script>
+
+</body>
+</html>

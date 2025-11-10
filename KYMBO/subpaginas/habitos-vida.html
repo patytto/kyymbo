@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generación de Buenos Hábitos - KIMBO</title>
+    <link rel="stylesheet" href="../style/style-prueba.css"> 
+    <link rel="stylesheet" href="habitos-vida.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="contenido">
+        <div class="titulos">
+            <img src="../imagenes/logo.png" alt="Logo Movimiento Docente" class="logo">
+            <h1>KIMBO</h1>
+            <h2>Colegio Brasilia Bosa</h2>
+        </div>
+
+        <header class="menu-principal-wrapper">
+            <button id="menu-button">☰</button>
+            
+            <nav id="dropdown-menu">
+                <a href="sedentarismo.html">🛋️ Qué es sedentarismo</a>
+                <a href="habitos-vida.html">🏃 Hábitos de vida</a>
+                <a href="alimentacion.html">🥗 Alimentación</a>
+                <a href="ejercicio.html">💪 Ejercicio</a>
+                <a href="podcast.html">🎙️ Podcast</a>
+            </nav>
+        </header>
+        
+        <div class="subpagina-contenido">
+            <h1>🏃 Hábitos de Vida: Cómo Generar el Cambio</h1>
+            
+            <p>Generar un hábito no se trata de fuerza de voluntad, sino de **estrategia**. Para los docentes con horarios ajustados, la clave es hacer que la acción sea lo más **fácil, obvia y satisfactoria** posible. Aquí te mostramos los pasos prácticos para integrar el movimiento y el bienestar en tu día a día.</p>
+
+            <h2>1. Estrategia: La Regla de los 2 Minutos</h2>
+            
+            <p>Todo nuevo hábito debe ser pequeño al principio. Haz que la acción tome menos de dos minutos. Si una tarea se siente demasiado grande, es más fácil posponerla. El objetivo es **establecer la rutina**, no el rendimiento.</p>
+
+            <ul class="lista-consejos">
+                <li><strong>Hábito Difícil:</strong> "Voy a hacer 30 minutos de ejercicio."</li>
+                <li><strong>Hábito Fácil (2 min):</strong> "Voy a ponerme la ropa de deporte."</li>
+                <li><strong>Hábito Difícil:</strong> "Voy a leer un libro durante 1 hora."</li>
+                <li><strong>Hábito Fácil (2 min):</strong> "Voy a leer la primera página de un libro."</li>
+            </ul>
+
+            <h2>2. Implementación: Apilamiento de Hábitos</h2>
+
+            <p>Conecta el nuevo hábito a una rutina que ya tienes. Esto se conoce como **Apilamiento de Hábitos**. Usa la fórmula: "Después de [Hábito Actual], haré [Nuevo Hábito]. "</p>
+
+            <div class="plan-habitos">
+                <h3>Ejemplos para Docentes:</h3>
+                <ol>
+                    <li>**Después de** servirme el café de la mañana, **haré** 10 estiramientos de cuello y hombros.</li>
+                    <li>**Después de** terminar de calificar una pila de trabajos, **haré** una caminata de 5 minutos por el pasillo.</li>
+                    <li>**Después de** cenar, **beberé** un vaso de agua grande antes de sentarme a ver televisión.</li>
+                </ol>
+            </div>
+
+            <h2>3. El Secreto del Seguimiento y la Motivación</h2>
+            
+            <p>Registrar tu progreso es crucial para mantener la inercia. Un hábito que no se mide, es fácil de olvidar. Usa un calendario o una aplicación sencilla.</p>
+
+            <div class="video-contenedor">
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/g2qJ6w6N8c4" title="Cómo crear hábitos con James Clear" allowfullscreen></iframe>
+                    <p>La Ciencia de Crear Hábitos (James Clear)</p>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/ADbJ9635FhU" title="Técnicas de microhábitos" allowfullscreen></iframe>
+                    <p>Microhábitos: Pequeños Cambios, Gran Impacto</p>
+                </div>
+            </div>
+            
+            <p style="margin-top: 30px; text-align: center; font-style: italic;">"La mejor manera de empezar es dejar de hablar y empezar a hacer. Lo pequeño de hoy es lo grande de mañana."</p>
+
+        </div>
+
+    </div>
+    
+    <script>
+        const menuButton = document.getElementById("menu-button");
+        const menu = document.getElementById("dropdown-menu");
+
+        menuButton.addEventListener("click", () => {
+            menu.classList.toggle("menu-visible");
+        });
+    </script>
+
+</body>
+</html>

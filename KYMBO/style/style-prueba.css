@@ -1,0 +1,461 @@
+/* Estilos generales de la página */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #000000;
+    text-align: center;
+    background: linear-gradient(135deg, #f9a1a1, #a1c4fd, #fbc2eb, #fddb92);
+    background-size: 300% 300%;
+    animation: gradient 12s ease infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Animación de fondo */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Contenido principal flexible */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Estilos de Logo, Títulos */
+.logo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.titulos h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #000000;
+    text-shadow: 0px 0px 15px rgba(250, 204, 21, 1),
+                 0px 0px 30px rgba(250, 204, 21, 0.8),
+                 0px 0px 45px rgba(250, 204, 21, 0.6);
+    margin: 10px 0;
+}
+
+.titulos h2 {
+    font-size: 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 12px;
+    backdrop-filter: blur(3px);
+    margin-bottom: 20px;
+}
+
+/* --- Estilos de la CAJA PRINCIPAL (Modo Día - Base) --- */
+.contenido {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px; 
+    border-radius: 15px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    text-align: center; 
+    transition: all 0.5s ease;
+    border: none;
+    animation: fadeIn 1.5s ease-in-out;
+    margin: 20px 0;
+}
+
+/* ====================================================== */
+/* ===== MENÚ DESPLEGABLE (ESTILO TARJETA MODERNA) ===== */
+/* ====================================================== */
+
+/* Botón del menú (☰) - Estilo aplicado a #botonMenu */ 
+#botonMenu { 
+    font-size: 1.2rem;
+    cursor: pointer; 
+    background: #28a745; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+    transition: background-color 0.2s; 
+    margin-bottom: 10px; 
+} 
+
+#botonMenu:hover { 
+    background-color: #218838; 
+} 
+
+/* Estilos del menú desplegable (CLASE .menu - ¡CORREGIDO PARA CENTRARSE!) */
+.menu { 
+    list-style: none;
+    padding: 0; 
+    margin-top: 15px; 
+    width: 90%;
+    max-width: 350px; 
+    
+    /* PROPIEDADES AÑADIDAS PARA CENTRAR EL BLOQUE */
+    margin-left: auto; 
+    margin-right: auto;
+    /* FIN PROPIEDADES PARA CENTRAR */
+
+    background: #ffffff; /* MODO DÍA: Fondo blanco */
+    border-radius: 12px; 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+    overflow: hidden; 
+    text-align: left; 
+    transition: all 0.5s ease; 
+    
+    /* Reglas para el despliegue animado */
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+} 
+
+/* Cabecera del menú */
+.menu h3 {
+    padding: 10px 15px 5px; 
+    font-size: 1.1rem; 
+    font-weight: 700;
+    margin: 0;
+    color: #007BFF;
+}
+
+/* Lista de opciones (el <ul> dentro de .menu) */
+.menu ul { 
+    list-style: none;
+    padding: 0 0 8px; 
+    margin: 0; 
+} 
+
+/* Enlaces del menú (el <a> dentro de .menu) */
+.menu ul li a { 
+    display: flex;
+    align-items: center;
+    padding: 10px 15px; 
+    color: #333; 
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 0.95rem; 
+    transition: background 0.2s, color 0.2s; 
+    border-bottom: 1px solid #eee; 
+} 
+
+.menu ul li:last-child a { 
+    border-bottom: none; 
+} 
+
+/* EFECTO HOVER - MODO DÍA */ 
+.menu ul li a:hover { 
+    background: linear-gradient(to right, #a1c4fd, #c8dafa); 
+    color: white; 
+} 
+
+/* ESTADO VISIBLE (cuando se quita la clase .oculto en JS) */
+.menu:not(.oculto) {
+    max-height: 500px;
+    opacity: 1;
+}
+
+
+/* Selectores de Rol y Oculto */
+.selector-rol { 
+    text-align: center; 
+    margin: 30px 0; 
+} 
+
+.selector-rol p { 
+    font-weight: bold; 
+    margin-bottom: 10px; 
+    font-size: 18px; 
+} 
+
+.selector-rol button { 
+    padding: 10px 25px; 
+    margin: 10px; 
+    font-size: 16px; 
+    background-color: #007BFF; 
+    color: white; 
+    border: none; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+} 
+
+.selector-rol button:hover { 
+    background-color: #0056b3; 
+} 
+
+#botonMenuContainer { 
+    text-align: center; 
+    margin-top: 20px; 
+} 
+
+.oculto { 
+    display: none !important; 
+} 
+
+/* ====================================================== */ 
+/* ===== 1. SELECTOR DE TEMAS (DERECHA) ===== */ 
+/* ====================================================== */ 
+.theme-selector-container { 
+    position: fixed; 
+    top: 30px;  
+    right: 30px; 
+    z-index: 1000; 
+} 
+
+.theme-btn { 
+    padding: 10px 15px; 
+    font-size: 1rem; 
+    border: none; 
+    background: linear-gradient(135deg, #ff5722, #ff9800); 
+    color: white; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    font-weight: 600; 
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+} 
+
+.theme-btn:hover { 
+    background: linear-gradient(135deg, #ff9800, #ff5722); 
+    transform: scale(1.05); 
+} 
+
+.theme-menu { 
+    display: none; 
+    flex-direction: column; 
+    position: absolute; 
+    right: 0; 
+    margin-top: 10px; 
+    background: #fff; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+    overflow: hidden; 
+} 
+
+.theme-menu.show-theme { 
+    display: flex; 
+} 
+
+.theme-option { 
+    padding: 10px 20px; 
+    border: none; 
+    background: none; 
+    text-align: left; 
+    cursor: pointer; 
+    font-size: 15px; 
+    transition: background-color 0.2s, color 0.2s; 
+} 
+
+.theme-option:hover { 
+    background: #f1f1f1; 
+} 
+
+/* ====================================================== */ 
+/* ===== 2. MENSAJE FOOTER ESPECIAL (FINAL) ===== */ 
+/* ====================================================== */ 
+.mensaje-footer-especial { 
+    margin: 20px auto; 
+    padding: 15px 30px; 
+    max-width: 500px; 
+    font-size: 1.1rem; 
+    font-weight: 600; 
+    border-radius: 10px; 
+    text-align: center; 
+    
+    /* ESTILO DÍA (Default) */ 
+    background: rgba(255, 255, 255, 0.9); 
+    color: #333333; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+    backdrop-filter: blur(5px);  
+    transition: all 0.5s ease; 
+    border: 1px solid #ddd; 
+} 
+
+
+/* --- Adaptación para MODO NOCHE (DARK) - CORREGIDO Y FORZADO --- */ 
+body.dark .mensaje-footer-especial { 
+    background: #222222 !important;  
+    color: #FFFFFF !important;  
+    box-shadow:  
+        0 0 5px black,  
+        0 0 10px black,  
+        0 0 20px yellow,  
+        0 0 30px yellow !important;  
+    border: 3px solid black !important; 
+} 
+
+/* --- Adaptación para MODO OCÉANO (OCEAN) --- */ 
+body.ocean .mensaje-footer-especial { 
+    background: rgba(224, 247, 250, 0.9); 
+    color: #004d61; 
+    box-shadow: 0 4px 10px rgba(0, 77, 97, 0.4); 
+    border: 1px solid #0077b6; 
+} 
+
+/* ====================================================== */ 
+/* ===== 3. ESTILOS DE TEMAS CON EFECTO NEÓN Y MENÚ GRIS ===== */ 
+/* ====================================================== */ 
+
+/* --- MODO NOCHE (DARK) --- */ 
+body.dark { 
+    background: linear-gradient(135deg, #1e1e1e, #3a3a3a); 
+    color: #f1f1f1; 
+} 
+
+body.dark .contenido { 
+    background: rgba(40, 40, 40, 0.95); 
+    max-width: 700px;  
+    padding: 60px 50px;  
+    border-radius: 40px;  
+    box-shadow:  
+        0 0 10px rgba(0,0,0,0.8),  
+        0 0 20px black,  
+        0 0 30px black,  
+        0 0 40px yellow,
+        0 0 70px yellow;  
+    border: 3px solid black;  
+    color: #f1f1f1; 
+} 
+
+body.dark .titulos h1 { 
+    color: #fff; 
+} 
+
+body.dark .titulos h2 { 
+    background: #555; 
+    color: #f1f1f1; 
+} 
+
+/* --- Botón del menú en Modo Noche --- */
+body.dark #botonMenu {
+    background-color: #1e1e1e;
+    color: yellow;
+    box-shadow: 0 0 5px yellow, 0 0 10px yellow;
+}
+body.dark #botonMenu:hover {
+    background-color: #3a3a3a;
+}
+
+/* --- MENÚ DESPLEGABLE EN MODO NOCHE (GRIS BONITO Y MODERNO) --- */ 
+body.dark .menu {
+    background: #2b2b2b; /* FONDO GRIS OSCURO */ 
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.1); 
+    border-radius: 12px; 
+}
+
+body.dark .menu h3 {
+    color: #a1c4fd;
+}
+
+body.dark .menu ul li a {
+    color: #f1f1f1; 
+    border-bottom: 1px solid #444; 
+}
+
+body.dark .menu ul li a:hover {
+    background: linear-gradient(to right, #1a1a1a, #333333); 
+    color: #a1c4fd; 
+}
+
+body.dark .mensaje-footer-especial { 
+    background: rgba(68, 68, 68, 0.8); 
+    color: #a1c4fd;  
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1); 
+} 
+
+/* --- MODO OCÉANO (OCEAN) --- */ 
+body.ocean { 
+    background: linear-gradient(135deg, #0448c7, #183de4); 
+    color: #333; 
+} 
+
+body.ocean .contenido { 
+    background: rgba(67, 172, 233, 0.9); 
+    max-width: 700px;  
+    padding: 60px 50px;  
+    border-radius: 40px;  
+    box-shadow:  
+        0 0 10px rgba(0, 195, 255, 0.6),  
+        0 0 20px rgb(255, 255, 255),  
+        0 0 30px rgb(90, 90, 90),  
+        0 0 40px rgb(255, 255, 255),
+        0 0 70px rgb(247, 247, 247);
+    border: 3px solid black;  
+    color: #333; 
+} 
+
+body.ocean .titulos h1 { 
+    color: #000000; 
+} 
+
+body.ocean .titulos h2 { 
+    background: #b2ebf2; 
+    color: #000000; 
+} 
+
+/* --- Botón del menú en Modo Océano --- */
+body.ocean #botonMenu {
+    background-color: #000000;
+    color: white;
+}
+body.ocean #botonMenu:hover {
+    background-color: #000000;
+}
+
+/* --- MENÚ DESPLEGABLE EN MODO OCÉANO --- */
+body.ocean .menu {
+    background: #e0f7fa;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1); 
+    border-radius: 12px;
+}
+body.ocean .menu h3 {
+    color: #000000;
+}
+body.ocean .menu ul li a {
+    color: #333;
+    border-bottom: 1px solid #cff4ff; 
+}
+body.ocean .menu ul li a:hover {
+    background: linear-gradient(to right, #b2ebf2, #e0f7fa); 
+    color: #000000; 
+}
+
+body.ocean .mensaje-footer-especial { 
+    background: rgba(255, 255, 255, 0.8); 
+    color: #000000;  
+    box-shadow: 0 2px 8px rgba(255, 230, 0, 0.2); 
+} 
+
+/* ===== Responsive (Ajuste para móviles) ===== */ 
+@media (max-width: 600px) { 
+    .contenido { 
+        padding: 30px 20px; 
+        border-radius: 25px; 
+    } 
+    .theme-selector-container { 
+        top: 15px; 
+        right: 15px; 
+    } 
+    .mensaje-footer-especial { 
+        max-width: 90%; 
+        padding: 10px 15px; 
+        font-size: 1rem; 
+    } 
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alimentación Saludable para Docentes Mujeres - KIMBO</title>
+    <link rel="stylesheet" href="alimentacion-mujeres.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="theme-selector-container">
+        <button class="theme-btn">🎨 Temas</button>
+        <div class="theme-menu">
+            <button class="theme-option" data-theme="default">☀️ Modo Día (Claro)</button>
+            <button class="theme-option" data-theme="dark">🌙 Modo Noche (Oscuro)</button>
+            <button class="theme-option" data-theme="ocean">🌊 Modo Océano (Relajante)</button>
+        </div>
+    </div>
+
+    <header>
+        <h1 class="titulo">KYMBO</h1>
+        <h2 class="subtitulo">Colegio Brasilia Bosa</h2>
+
+        <div class="menu-container">
+            <button class="menu-btn">☰</button>
+            <ul class="menu">
+                <li><a href="../index.html">🏠 Inicio</a></li>
+                <li><a href="porque-mujeres.html">🏫 Qué es sedentarismo</a></li>
+                <li><a href="habitos-mujeres.html">🏃‍♀️ Hábitos de vida</a></li>
+                <li><a href="alimentacion-mujeres.html">🥗 Alimentación</a></li>
+                <li><a href="ejercicio-mujeres.html">💪 Ejercicio</a></li>
+                <li><a href="podcast.html">🎙️ Podcast</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <main>
+        <section class="contenido">
+            <h2>🍎 Alimentación para Docentes Mujeres</h2>
+            <p>
+                Una alimentación balanceada es clave para mantener la energía, la salud hormonal y un bienestar general. Aquí te dejamos una guía completa adaptada a tus necesidades.
+            </p>
+
+            <section class="video-destacado">
+                <div class="thumbnail" onclick="mostrarVideo()">
+                    <img src="https://img.youtube.com/vi/RSqIvvrDPOg/0.jpg" alt="Miniatura del video" />
+                    <div class="boton-play">▶</div>
+                </div>
+
+                <iframe id="videoYoutube" src="" frameborder="0" allowfullscreen></iframe>
+                
+                <a class="boton-youtube" href="https://www.youtube.com/watch?v=RSqIvvrDPOg" target="_blank">
+                    🎥 Ver en YouTube
+                </a>
+            </section>
+
+
+            <h3>🍳 Desayuno</h3>
+            <table id="tabla-desayuno">
+                <thead>
+                    <tr><th>Ejemplo</th><th>Recomendación</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Yogur griego con frutos rojos y chía</td><td>Aporte de proteínas, fibra y antioxidantes para empezar el día.</td></tr>
+                    <tr><td>Avena con leche de almendras y canela</td><td>Carbohidratos complejos para energía sostenida.</td></tr>
+                    <tr><td>Batido de espinaca, banano y proteína de vainilla</td><td>Nutrientes esenciales para el cabello y la piel.</td></tr>
+                </tbody>
+            </table>
+            <a href="desayuno.xlsx" download="desayuno.xlsx" class="btn-descargar">
+              ⬇️ Descargar Tabla Desayuno(Excel)
+            </a>
+
+            <h3>🍲 Almuerzo</h3>
+            <table id="tabla-almuerzo">
+                <thead>
+                    <tr><th>Ejemplo</th><th>Recomendación</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Salmón al horno con quinoa y vegetales asados</td><td>Rico en Omega-3, ideal para la salud del cerebro y el estado de ánimo.</td></tr>
+                    <tr><td>Ensalada de pollo con aguacate, espinaca y tomate cherry</td><td>Proteína magra para el mantenimiento muscular y saciedad.</td></tr>
+                    <tr><td>Tofu salteado con brócoli y arroz integral</td><td>Opción vegetal rica en hierro y proteínas.</td></tr>
+                </tbody>
+            </table>
+            <a href="almuerzo.xlsx" download="almuerzo.xlsx" class="btn-descargar">
+              ⬇️ Descargar Tabla Almuerzo(Excel)
+            </a>
+
+            <h3>🍎 Refrigerio</h3>
+            <table id="tabla-refrigerio">
+                <thead>
+                    <tr><th>Ejemplo</th><th>Recomendación</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Puñado de almendras y un puñado de uvas</td><td>Grasas saludables y azúcar natural para un impulso de energía.</td></tr>
+                    <tr><td>Palitos de zanahoria con hummus</td><td>Fibra y proteína para controlar el apetito.</td></tr>
+                    <tr><td>Un huevo cocido</td><td>Proteína de alta calidad para la recuperación muscular.</td></tr>
+                </tbody>
+            </table>
+            <a href="refrigerio.xlsx" download="refrigerio.xlsx" class="btn-descargar">
+              ⬇️ Descargar Tabla Refrigerio(Excel)
+            </a>
+
+            <h3>🥗 Cena</h3>
+            <table id="tabla-cena">
+                <thead>
+                    <tr><th>Ejemplo</th><th>Recomendación</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Sopa de lentejas con vegetales</td><td>Una cena ligera y reconfortante, alta en fibra y hierro.</td></tr>
+                    <tr><td>Pechuga de pavo con ensalada de hojas verdes y semillas</td><td>Proteína magra que apoya la salud ósea.</td></tr>
+                    <tr><td>Tortilla de huevo con champiñones y pimientos</td><td>Fácil de digerir y nutritiva para una buena noche de sueño.</td></tr>
+                </tbody>
+            </table>
+            <a href="cena.xlsx" download="cena.xlsx" class="btn-descargar">
+              ⬇️ Descargar Tabla Cena(Excel)
+            </a>
+
+            <a id="hiddenDownloader" style="display:none"></a>
+        </section>
+    </main>
+
+
+    <script>
+        // Lógica para mostrar/ocultar menú (adaptada a la nueva estructura)
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuBtn = document.querySelector(".menu-btn");
+            const menu = document.querySelector(".menu");
+            if (menuBtn && menu) {
+                menuBtn.addEventListener("click", () => {
+                    menu.classList.toggle("show");
+                });
+            }
+
+            // Lógica para la descarga de CSV (tomada del código original)
+            const hiddenA = document.getElementById("hiddenDownloader");
+
+            function tableToCSV(tableEl) {
+                const filas = Array.from(tableEl.querySelectorAll("tr"));
+                const csvFilas = filas.map(tr => {
+                    const celdas = Array.from(tr.querySelectorAll("th, td")).map(td => {
+                        let txt = td.innerText.replace(/\r?\n|\r/g, " ").trim();
+                        if (/[",\n]/.test(txt)) txt = '"' + txt.replace(/"/g, '""') + '"';
+                        return txt;
+                    });
+                    return celdas.join(",");
+                });
+                const contenido = ["sep=,", ...csvFilas].join("\n");
+                return "\uFEFF" + contenido;
+            }
+
+            function descargarCSV(nombre, contenidoCSV) {
+                const blob = new Blob([contenidoCSV], { type: "text/csv;charset=utf-8" });
+                const url = URL.createObjectURL(blob);
+                hiddenA.href = url;
+                hiddenA.download = nombre;
+                hiddenA.click();
+                setTimeout(() => URL.revokeObjectURL(url), 0);
+            }
+
+            document.querySelectorAll(".btn-descargar").forEach(boton => {
+                boton.addEventListener("click", () => {
+                    const tablaId = boton.getAttribute("data-tabla");
+                    const nombreArchivo = boton.getAttribute("data-nombre");
+                    const tabla = document.getElementById(tablaId);
+                    if (tabla) {
+                        const csv = tableToCSV(tabla);
+                        descargarCSV(nombreArchivo, csv);
+                    }
+                });
+            });
+        });
+
+        // Mostrar video al hacer clic en miniatura
+        function mostrarVideo() {
+            const iframe = document.getElementById("videoYoutube");
+            iframe.src = "https://www.youtube.com/embed/RSqIvvrDPOg?autoplay=1&rel=0";
+            iframe.style.display = "block";
+            // Esconder la miniatura y el botón de YouTube
+            document.querySelector(".thumbnail").style.display = "none";
+            document.querySelector(".boton-youtube").style.display = "none";
+        }
+    </script>
+<script src="../tema.js"></script>
+</body>
+</html>
