@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>KYMBO - Menú Sedentarismo</title>
-    <link rel="stylesheet" href="style/style-prueba.css"/>
+    <link rel="stylesheet" href="style/style-prueba.css"/> 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet"/>
 </head>
 <body>
@@ -93,7 +93,7 @@
         });
         
         // =========================================================
-        // LÓGICA DE TEMAS
+        // LÓGICA DE TEMAS (LA PARTE QUE FALLABA EN EL DEPLOY)
         // =========================================================
         const themeBtn = document.querySelector(".theme-btn");
         const themeMenu = document.querySelector(".theme-menu");
@@ -108,8 +108,10 @@
         }
 
         function applyTheme(theme) {
+            // Elimina clases anteriores y añade la nueva
             body.className = ''; 
             body.classList.add(theme);
+            // Guarda la preferencia
             localStorage.setItem('userTheme', theme); 
         }
 
@@ -121,7 +123,7 @@
             option.addEventListener('click', () => {
                 const newTheme = option.getAttribute('data-theme');
                 applyTheme(newTheme);
-                themeMenu.classList.remove("show-theme"); 
+                themeMenu.classList.remove("show-theme"); // Cierra el menú al seleccionar
             });
         });
         
@@ -133,6 +135,5 @@
         });
     });
 </script>
-<script src="../tema.js"></script>
 </body>
 </html>
